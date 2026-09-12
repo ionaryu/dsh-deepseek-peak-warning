@@ -51,7 +51,6 @@
   },
   "scripts": {
     "build": "node build.mjs",
-    "prepare": "node build.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "check": "pnpm run typecheck && pnpm run test && pnpm run build"
