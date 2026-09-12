@@ -23,7 +23,19 @@ dsh plugin --profile web add github:ionaryu/dsh-deepseek-peak-warning
 dsh --profile web --dump-config   # shows a "# == dsh-deepseek-peak-warning" layer
 ```
 
-The repository commits its built `lib/index.js`, so this install needs no build step and no `allowBuilds` entry — pnpm fetches a package that is already runnable. Pin the commit (`github:ionaryu/dsh-deepseek-peak-warning#<sha>`) when the install must stay fixed; an unpinned reference follows `main`, and a later `add` of a newer commit updates it. To install from a local checkout instead — the path used during development — replace the reference with `file:/absolute/path/to/deepseek-peak-warning`.
+The repository commits its built `lib/index.js`, so this install needs no build step and no `allowBuilds` entry — pnpm fetches a package that is already runnable. An unpinned reference follows `main`; a later `add` of a newer commit updates it.
+
+Two alternatives pin what you get:
+
+```sh
+# A release tag.
+dsh plugin --profile web add github:ionaryu/dsh-deepseek-peak-warning#v0.1.0
+
+# The packed artifact attached to that release, which needs no git fetch.
+dsh plugin --profile web add https://github.com/ionaryu/dsh-deepseek-peak-warning/releases/download/v0.1.0/dsh-deepseek-peak-warning-0.1.0.tgz
+```
+
+To install from a local checkout instead — the path used during development — replace the reference with `file:/absolute/path/to/deepseek-peak-warning`.
 
 A host row is applied once at boot, so the notice starts with the next launch. Working on the plugin itself means rebuilding after an edit: `pnpm install && pnpm run check`.
 
