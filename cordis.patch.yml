@@ -1,0 +1,5 @@
+# Mounted after the profile's bundle layers. The row resolves by package name,
+# so Node resolution finds the installed code in the profile directory.
+- insert:
+    - id: deepseek-peak-warning
+      name: dsh-deepseek-peak-warning

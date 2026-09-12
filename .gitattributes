@@ -1,0 +1,6 @@
+# Normalize every text file to LF in the repository, so a clone on Windows and
+# one on macOS or Linux produce identical bytes.
+* text=auto eol=lf
+
+# Built output is consumed by Node directly; keep it byte-identical too.
+lib/** -text

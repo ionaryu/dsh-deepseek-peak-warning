@@ -1,0 +1,11 @@
+# Dependencies installed by pnpm for local development and the build script.
+node_modules/
+
+# Editor and OS noise.
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+
+# Local verification artifacts.
+*.log
